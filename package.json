@@ -1,0 +1,44 @@
+{
+    "name": "javascript-development-environment",
+    "version": "1.0.0",
+    "description": "JavaScript development environment",
+    "scripts": {
+        "prestart": "babel-node build-scripts/start-message.js",
+        "start": "npm-run-all --parallel security-check start-server lint:watch",
+        "start-server": "babel-node build-scripts/server.js",
+        "security-check": "nsp check",
+        "local-tunnel": "lt --port 3000",
+        "lint": "esw webpack.config.*, src, build-scripts --color",
+        "lint:watch": "npm run lint -- --watch"
+    },
+    "author": "SCA",
+    "license": "MIT",
+    "dependencies": {
+        "numeral": "1.5.3",
+        "whatwg-fetch": "1.0.0"
+    } ,
+    "devDependencies": {
+        "express": "4.14.0",
+        "localtunnel": "1.8.1",
+        "open": "0.0.5",
+        "chalk": "1.1.3",
+        "nsp": "2.6.1",
+        "npm-run-all": "3.1.0",
+        "babel-cli": "6.18.0",
+        "babel-core": "6.18.2",
+        "babel-loader": "6.2.8",
+        "babel-preset-latest": "6.16.0",
+        "babel-register": "6.18.0",
+        "webpack": "1.13.2",
+        "webpack-dev-middleware": "1.8.3",
+        "webpack-hot-middleware": "2.12.2",
+        "webpack-md5-hash": "0.0.5",
+        "eslint": "3.11.0",
+        "eslint-plugin-import": "2.2.0",
+        "eslint-watch": "2.1.14"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cmevawala/javascript-development-environment"
+    }
+}
